@@ -6,9 +6,7 @@ $(document).ready(function($) {
 
     // Replace with your own values  
     var feedID        = 967735657,     // Feed ID  
-        datastreamID  = "CO";          // Datastream ID  
-        selector      = "#myphone";   // Your element on the page  
-        divName       = "#place"
+        selector      = "#egg6";   // Your element on the page  
 
     var getDataFromXively = function (feedID, datastreamID, divName) {
         // Get datastream data from Xively  
@@ -37,7 +35,7 @@ $(document).ready(function($) {
     getDataFromXively(feedID, "NO2", "#place2");
     getDataFromXively(feedID, "Humidity", "#place3");
     getDataFromXively(feedID, "Temperature", "#place4");
-  
+
   // WARNING: Code here will continue executing while we get the datastream data from Xively,   
   // use the function associated with datastream.get to work with the data   
   // once the request is complete  
