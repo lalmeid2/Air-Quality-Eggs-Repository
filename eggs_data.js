@@ -19,7 +19,7 @@ $(document).ready(function($) {
             // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream  
 
             // Display the current value from the datastream  
-            $(divName).html(datastreamID + " " + datastream["current_value"] );  
+            $(divName).html(datastreamID + ": " + datastream["current_value"] );  
 
             // Getting realtime!   
             // The function associated with the subscribe method will be executed   
@@ -35,6 +35,23 @@ $(document).ready(function($) {
     getDataFromXively(feedID, "NO2", "#place2");
     getDataFromXively(feedID, "Humidity", "#place3");
     getDataFromXively(feedID, "Temperature", "#place4");
+
+    xively.feed.get (feedID, function ( feed ) {  
+            // WARNING: This code is only executed when we get a response back from Xively,   
+            // it will likely execute after the rest your script  
+            //  
+            // NOTE: The variable "datastream" will contain all the Datastream information   
+            // as an object. The structure of Datastream objects can be found at:   
+            // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream  
+
+            // Display the current value from the datastream  
+            $("#place5").html("Latitude" + ": " + feed["location"].lat );
+            $("#place6").html("Longitude" + ": " + feed["location"].lon );
+
+            // Getting realtime!   
+            // The function associated with the subscribe method will be executed   
+            // every time there is an update to the datastream  
+        });
 
   // WARNING: Code here will continue executing while we get the datastream data from Xively,   
   // use the function associated with datastream.get to work with the data   
