@@ -46,7 +46,7 @@ var setMarkerOnMap = function (feedID) {
 var feedID = 967735657;
 
 var map = new google.maps.Map(document.getElementById('googleMap'), {
-  	zoom: 13,
+  	zoom: 16,
   	center: new google.maps.LatLng(33.9689978832525,-118.415820072074),
  	mapTypeId: google.maps.MapTypeId.ROADMAP
 });
@@ -55,5 +55,20 @@ var infowindow = new google.maps.InfoWindow();
 
 var i;
 
-setMarkerOnMap(feedID);
+//Needs a loop; trying to do it with files;
+
+setMarkerOnMap(967735657);
 setMarkerOnMap(485551354);
+setMarkerOnMap(1844507298);
+setMarkerOnMap(2035052636);
+setMarkerOnMap(163188704);
+setMarkerOnMap(294678862);
+setMarkerOnMap(391882660);
+setMarkerOnMap(428399050);
+setMarkerOnMap(873272112);
+setMarkerOnMap(2045393884);
+setMarkerOnMap(1700345296);
+setMarkerOnMap(1218314598);
+setMarkerOnMap(2087285270);
+setMarkerOnMap(908476336);
+setMarkerOnMap(329270064);
