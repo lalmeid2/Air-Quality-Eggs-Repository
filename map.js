@@ -1,28 +1,11 @@
-// //Set the Google Maps' map
-// function initialize() {
-//     var mapProp = {
-//         center:new google.maps.LatLng(33.9689978832525,-118.415820072074),
-//         zoom:13,
-//         mapTypeId:google.maps.MapTypeId.ROADMAP
-//     };
-//     var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-// }
-// google.maps.event.addDomListener(window, 'load', initialize);
-
-// //Indicating where the Air Quality Egg is on the map.
-// xivelyGmaps.setMapElement("#googleMap");
-// xivelyGmaps.setKey("U5o8w9lgaTX9Gkd89zlCM4NCvrnnVj6cEUJIKHcZ5MIW1Ijw");
-// google.maps.event.addDomListener(google.maps.Marker, 'load', xivelyGmaps.subscribe("967735657"));
-// //google.maps.event.addDomListener(google.maps.Marker, 'load', xivelyGmaps.subscribe("485551354"));
-
-
+//The key has to be set before trying to retrieve data from Xively
 xively.setKey( "U5o8w9lgaTX9Gkd89zlCM4NCvrnnVj6cEUJIKHcZ5MIW1Ijw" ); 
 
 var setMarkerOnMap = function (feedID) {
     var coordinates = {name: "", lat: 0, lon: 0};
     var marker;
 
-    //Get datastream data from Xively  
+    //Get feed from Xively  
 	xively.feed.get(feedID, function (feed) {
 		coordinates.name = feed["title"];
 		coordinates.lat = feed["location"].lat;
@@ -46,7 +29,7 @@ var setMarkerOnMap = function (feedID) {
 var feedID = 967735657;
 
 var map = new google.maps.Map(document.getElementById('googleMap'), {
-  	zoom: 16,
+  	zoom: 15,
   	center: new google.maps.LatLng(33.9689978832525,-118.415820072074),
  	mapTypeId: google.maps.MapTypeId.ROADMAP
 });
