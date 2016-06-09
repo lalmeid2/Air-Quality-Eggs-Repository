@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Customers</title>
+        <title>Data</title>
         <link href="site.css" rel="stylesheet">
     </head>
 
@@ -10,8 +10,37 @@
         <nav id="nav01"></nav>
 
         <div id="main">
-            <h1>Customers</h1>
+            <h1>Data</h1>
             <div id="id01"></div>
+            <p></p>
+            <div id="id02"></div>
+            <p></p>
+            <div id="id03"></div>
+            <p></p>
+            <div id="id04"></div>
+            <p></p>
+            <div id="id05"></div>
+            <p></p>
+            <div id="id06"></div>
+            <p></p>
+            <div id="id07"></div>
+            <p></p>
+            <div id="id08"></div>
+            <p></p>
+            <div id="id09"></div>
+            <p></p>
+            <div id="id010"></div>
+            <p></p>
+            <div id="id011"></div>
+            <p></p>
+            <div id="id012"></div>
+            <p></p>
+            <div id="id013"></div>
+            <p></p>
+            <div id="id014"></div>
+            <p></p>
+            <div id="id015"></div>
+            <p></p>
         </div>
 
         <script src="script.js"></script>
@@ -20,34 +49,34 @@
         <script src="data.js"></script>
 
         <script>
-            var xmlhttp = new XMLHttpRequest();
-            var url = "http://www.w3schools.com/website/customers_db_sql.aspx";
+            // var xmlhttp = new XMLHttpRequest();
+            // var url = "http://www.w3schools.com/website/customers_db_sql.aspx";
 
-            xmlhttp.onreadystatechange = function() {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    myFunction(xmlhttp.responseText);
-                }
-            }
-            xmlhttp.open("GET", url, true);
-            xmlhttp.send();
+            // xmlhttp.onreadystatechange = function() {
+            //     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            //         myFunction(xmlhttp.responseText);
+            //     }
+            // }
+            // xmlhttp.open("GET", url, true);
+            // xmlhttp.send();
 
-            function myFunction(response) {
-                var obj = JSON.parse(response);
-                var arr = obj.records;
-                var i;
-                var out = "<table><tr><th>Name</th><th>City</th><th>Country</th></tr>";
-                for(i = 0; i < arr.length; i++) {
-                    out += "<tr><td>" + 
-                    arr[i].Name +
-                    "</td><td>" +
-                    arr[i].City +
-                    "</td><td>" +
-                    arr[i].Country +
-                    "</td></tr>";
-                }
-                out += "</table>"
-                document.getElementById("id01").innerHTML = out;
-            }
+            // function myFunction(response) {
+            //     var obj = JSON.parse(response);
+            //     var arr = obj.records;
+            //     var i;
+            //     var out = "<table><tr><th>Name</th><th>City</th><th>Country</th></tr>";
+            //     for(i = 0; i < arr.length; i++) {
+            //         out += "<tr><td>" + 
+            //         arr[i].Name +
+            //         "</td><td>" +
+            //         arr[i].City +
+            //         "</td><td>" +
+            //         arr[i].Country +
+            //         "</td></tr>";
+            //     }
+            //     out += "</table>"
+            //     document.getElementById("id01").innerHTML = out;
+            // }
         </script>
 
     </body>
