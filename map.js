@@ -11,14 +11,15 @@ var setMarkerOnMap = function (feedID) {
         coordinates.lat = feed["location"].lat;
         coordinates.lon = feed["location"].lon;
 
-        //Structure used to get the sensor type (string) and its value:
-        for (var i = 0; i < feed["datastreams"].length; i++) {
-            for (var j = 0; j < feed["datastreams"][i]["tags"].length; j++) {
-                if (feed["datastreams"][i]["tags"][j].indexOf("aqe:sensor_type") != -1) {
-                    console.log(feed["datastreams"][i]["tags"][j].slice(16) + " " + feed["datastreams"][i]["current_value"]);
-                };
-            };
-        };
+        // //Structure used to get the sensor type (string) and its value:
+        // for (var i = 0; i < feed["datastreams"].length; i++) {
+        //     for (var j = 0; j < feed["datastreams"][i]["tags"].length; j++) {
+        //         if (feed["datastreams"][i]["tags"][j].indexOf("aqe:sensor_type") != -1) {
+        //             //console.log(feed["datastreams"][i]["tags"][j].slice(16) + " " + feed["datastreams"][i]["current_value"]);
+        //             console.log(feed["datastreams"][i]["id"] + " " + feed["datastreams"][i]["current_value"]);
+        //         };
+        //     };
+        // };
 
         marker = new google.maps.Marker({
             position: new google.maps.LatLng(coordinates.lat, coordinates.lon),
