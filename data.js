@@ -55,23 +55,7 @@ var feedIDs = [967735657,
               908476336,
               329270064];
 
-var divIDs = ["id01",
-              "id02",
-              "id03",
-              "id04",
-              "id05",
-              "id06",
-              "id07",
-              "id08",
-              "id09",
-              "id010",
-              "id011",
-              "id012",
-              "id013",
-              "id014",
-              "id015"];
-
 //Loop to set the markers on the map
 for (var i = 0; i < feedIDs.length; i++) {
-    setDataOnPage(feedIDs[i], divIDs[i]);
+    setDataOnPage(feedIDs[i], "id" + i);
 };
