@@ -11,6 +11,8 @@ var setDataOnPage = function (feedID, divID) {
         coordinates.lat = feed["location"].lat;
         coordinates.lon = feed["location"].lon;
 
+        var div = document.createElement('div');
+        div.id = divID;
         var out = "<table><tr><th>AQE: " + feed["title"] + "</th><th>Value</th></tr>";
 
         //Structure used to get the sensor type (string) and its value:
@@ -30,8 +32,9 @@ var setDataOnPage = function (feedID, divID) {
             };
         };
 
-        out += "</table>";
-        document.getElementById(divID).innerHTML = out;
+        out += "</table><p></p>";
+        div.innerHTML = out;
+        document.body.appendChild(div);
 
     });
 };
