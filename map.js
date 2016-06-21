@@ -1,9 +1,12 @@
 //The key has to be set before trying to retrieve data from Xively
 xively.setKey( "U5o8w9lgaTX9Gkd89zlCM4NCvrnnVj6cEUJIKHcZ5MIW1Ijw" ); 
 
-var setMarkerOnMap = function (feedID) {
+var setMarkerOnMap = function (feedID, serialNumber) {
     var coordinates = {name: "", lat: 0, lon: 0};
     var marker;
+    var eggURL = "https://airqualityegg.wickeddevice.com/dashboard/#/egg/" + serialNumber;
+    var eggURLhtml = "<a href=" + eggURL + ">" + eggURL + "</a>";
+
 
     //Get feed from Xively  
     xively.feed.get(feedID, function (feed) {
@@ -18,7 +21,7 @@ var setMarkerOnMap = function (feedID) {
 
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
-            infowindow.setContent(coordinates.name);
+            infowindow.setContent(coordinates.name + "<p></p>" + eggURLhtml);
             infowindow.open(map, marker);
             }
         })(marker, i));
@@ -26,21 +29,21 @@ var setMarkerOnMap = function (feedID) {
 };
 
 var feedIDs = [
-                1218314598,   //LMU-nj 1
-                329270064,    //LMU-nj 2
-                1700345296,   //LMU-nj 3
-                2045393884,   //LMU-nj 4
-                2087285270,   //LMU-nj 5
+                1218314598,   //LMU-NJ 1
+                329270064,    //LMU-NJ 2
+                1700345296,   //LMU-NJ 3
+                2045393884,   //LMU-NJ 4
+                2087285270,   //LMU-NJ 5
                 967735657,    //LMU-NJ 6
                 428399050,    //LMU-NJ 7
-                908476336,    //LMU-nj 8
+                908476336,    //LMU-NJ 8
                 294678862,    //LMU-NJ 15
                 873272112,    //LMU-NJ 16
-                391882660,    //LMU-NJ 18
-                1844507298,   //JML001
-                2035052636,   //JML002
-                485551354,    //JML003
-                163188704     //LMU Air Quality Egg
+                391882660     //LMU-NJ 18
+                //1844507298,   //JML001
+                //2035052636,   //JML002
+                //485551354,    //JML003
+                //163188704     //LMU Air Quality Egg
             ];
 
 var serialNumbers = [
@@ -54,8 +57,8 @@ var serialNumbers = [
                     "egg00802294ca180142", //LMU-NJ 8
                     "egg008028c099ab0152", //LMU-NJ 15
                     "egg008028c068980152", //LMU-NJ 16
-                    "egg0080281b299b0150", //LMU-NJ 17
-                    "egg00802927120b0151", //LMU-NJ 18
+                    //"egg0080281b299b0150", //LMU-NJ 17
+                    "egg00802927120b0151" //LMU-NJ 18
                     ];
 
 var map = new google.maps.Map(document.getElementById('googleMap'), {
@@ -68,5 +71,5 @@ var infowindow = new google.maps.InfoWindow();
 
 //Loop to set the markers on the map
 for (var i = 0; i < feedIDs.length; i++) {
-    setMarkerOnMap(feedIDs[i]);
+    setMarkerOnMap(feedIDs[i], serialNumbers[i]);
 };
