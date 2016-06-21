@@ -43,6 +43,21 @@ var feedIDs = [
                 163188704     //LMU Air Quality Egg
             ];
 
+var serialNumbers = [
+                    "egg0080225b098b0143", //LMU-NJ 1
+                    "egg00802294ab180142", //LMU-NJ 2
+                    "egg008022c262980141", //LMU-NJ 3
+                    "egg0080225b56180143", //LMU-NJ 4
+                    "egg0080228b77a80140", //LMU-NJ 5
+                    "egg00802294c8980142", //LMU-NJ 6
+                    "egg0080228b2d8b0140", //LMU-NJ 7
+                    "egg00802294ca180142", //LMU-NJ 8
+                    "egg008028c099ab0152", //LMU-NJ 15
+                    "egg008028c068980152", //LMU-NJ 16
+                    "egg0080281b299b0150", //LMU-NJ 17
+                    "egg00802927120b0151", //LMU-NJ 18
+                    ];
+
 var map = new google.maps.Map(document.getElementById('googleMap'), {
     zoom: 16,
     center: new google.maps.LatLng(33.9689978832525,-118.415820072074),
