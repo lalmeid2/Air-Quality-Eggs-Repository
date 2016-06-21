@@ -28,38 +28,24 @@ var setMarkerOnMap = function (feedID, serialNumber) {
     });
 };
 
+//Variable containing the feed IDs and the serial number of each egg.
 var feedIDs = [
-                1218314598,   //LMU-NJ 1
-                329270064,    //LMU-NJ 2
-                1700345296,   //LMU-NJ 3
-                2045393884,   //LMU-NJ 4
-                2087285270,   //LMU-NJ 5
-                967735657,    //LMU-NJ 6
-                428399050,    //LMU-NJ 7
-                908476336,    //LMU-NJ 8
-                294678862,    //LMU-NJ 15
-                873272112,    //LMU-NJ 16
-                391882660     //LMU-NJ 18
+                [1218314598, "egg0080225b098b0143"],   //LMU-NJ 1
+                [329270064, "egg00802294ab180142"],    //LMU-NJ 2
+                [1700345296, "egg008022c262980141"],  //LMU-NJ 3
+                [2045393884, "egg0080225b56180143"],  //LMU-NJ 4
+                [2087285270, "egg0080228b77a80140"],  //LMU-NJ 5
+                [967735657, "egg00802294c8980142"],   //LMU-NJ 6
+                [428399050, "egg0080228b2d8b0140"],   //LMU-NJ 7
+                [908476336, "egg00802294ca180142"],   //LMU-NJ 8
+                [294678862, "egg008028c099ab0152"],   //LMU-NJ 15
+                [873272112, "egg008028c068980152"],   //LMU-NJ 16
+                [391882660, "egg00802927120b0151"]    //LMU-NJ 18
                 //1844507298,   //JML001
                 //2035052636,   //JML002
                 //485551354,    //JML003
                 //163188704     //LMU Air Quality Egg
             ];
-
-var serialNumbers = [
-                    "egg0080225b098b0143", //LMU-NJ 1
-                    "egg00802294ab180142", //LMU-NJ 2
-                    "egg008022c262980141", //LMU-NJ 3
-                    "egg0080225b56180143", //LMU-NJ 4
-                    "egg0080228b77a80140", //LMU-NJ 5
-                    "egg00802294c8980142", //LMU-NJ 6
-                    "egg0080228b2d8b0140", //LMU-NJ 7
-                    "egg00802294ca180142", //LMU-NJ 8
-                    "egg008028c099ab0152", //LMU-NJ 15
-                    "egg008028c068980152", //LMU-NJ 16
-                    //"egg0080281b299b0150", //LMU-NJ 17
-                    "egg00802927120b0151" //LMU-NJ 18
-                    ];
 
 var map = new google.maps.Map(document.getElementById('googleMap'), {
     zoom: 16,
@@ -71,5 +57,5 @@ var infowindow = new google.maps.InfoWindow();
 
 //Loop to set the markers on the map
 for (var i = 0; i < feedIDs.length; i++) {
-    setMarkerOnMap(feedIDs[i], serialNumbers[i]);
+    setMarkerOnMap(feedIDs[i][0], feedIDs[i][1]);
 };
