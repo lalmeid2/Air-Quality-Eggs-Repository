@@ -9,6 +9,10 @@ var setMarkerOnMap = function (feedID, serialNumber) {
 
 
     //Get feed from Xively  
+        //P.S.: The location data still stored on Xively website; we do not know until when 
+        //      it will continue being stored there. When it changes, this structure will 
+        //      probably need to be changed too.
+
     xively.feed.get(feedID, function (feed) {
         coordinates.name = feed["title"];
         coordinates.lat = feed["location"].lat;
@@ -29,6 +33,10 @@ var setMarkerOnMap = function (feedID, serialNumber) {
 };
 
 //Variable containing the feed IDs and the serial number of each egg.
+
+//Note: For future changes, make this array dynamic in a way the user can add eggs while using
+//      the website. For this to happen files can be used (or any other form of data storing).
+
 var feedIDs = [
                 [1218314598, "egg0080225b098b0143"],   //LMU-NJ 1
                 [329270064, "egg00802294ab180142"],    //LMU-NJ 2
@@ -41,10 +49,6 @@ var feedIDs = [
                 [294678862, "egg008028c099ab0152"],    //LMU-NJ 15
                 [873272112, "egg008028c068980152"],    //LMU-NJ 16
                 [391882660, "egg00802927120b0151"]     //LMU-NJ 18
-                //1844507298,   //JML001
-                //2035052636,   //JML002
-                //485551354,    //JML003
-                //163188704     //LMU Air Quality Egg
             ];
 
 var map = new google.maps.Map(document.getElementById('googleMap'), {
